@@ -33,7 +33,7 @@ public class MainActivityTest {
 // Click on Add City button
         onView(withId(R.id.button_add)).perform(click());
 // Type "Edmonton" in the editText
-        onView(withId(R.id.editText_name)).perform(ViewActions.typeText("Edmonton"));
+        onView(withId(R.id.editText_name)).perform(ViewActions.replaceText("Edmonton"));
 // Click on Confirm
         onView(withId(R.id.button_confirm)).perform(click());
 // Check if text "Edmonton" is matched with any of the textdisplayed on the screen
@@ -44,11 +44,11 @@ public class MainActivityTest {
     public void testClearCity(){
 // Add first city to the list
         onView(withId(R.id.button_add)).perform(click());
-        onView(withId(R.id.editText_name)).perform(ViewActions.typeText("Edmonton"));
+        onView(withId(R.id.editText_name)).perform(ViewActions.replaceText("Edmonton"));
         onView(withId(R.id.button_confirm)).perform(click());
 //Add another city to the list
         onView(withId(R.id.button_add)).perform(click());
-        onView(withId(R.id.editText_name)).perform(ViewActions.typeText("Vancouver"));
+        onView(withId(R.id.editText_name)).perform(ViewActions.replaceText("Vancouver"));
                 onView(withId(R.id.button_confirm)).perform(click());
 //Clear the list
         onView(withId(R.id.button_clear)).perform(click());
@@ -59,7 +59,7 @@ public class MainActivityTest {
     public void testListView(){
 // Add a city
         onView(withId(R.id.button_add)).perform(click());
-        onView(withId(R.id.editText_name)).perform(ViewActions.typeText("Edmonton"));
+        onView(withId(R.id.editText_name)).perform(ViewActions.replaceText("Edmonton"));
                 onView(withId(R.id.button_confirm)).perform(click());
 // Check if in the Adapter view (given id of that adapter view), there is a data
 // (which is an instance of String) located at position zero.
@@ -72,7 +72,7 @@ public class MainActivityTest {
     public void testActivitySwitch() {
         // Add a city to the list first
         onView(withId(R.id.button_add)).perform(click());
-        onView(withId(R.id.editText_name)).perform(ViewActions.typeText("Toronto"));
+        onView(withId(R.id.editText_name)).perform(ViewActions.replaceText("Toronto"));
         onView(withId(R.id.button_confirm)).perform(click());
 
         // Click on the city in the list
@@ -88,7 +88,7 @@ public class MainActivityTest {
     public void testCityNameIsConsistent() {
         // Add a city to the list first
         onView(withId(R.id.button_add)).perform(click());
-        onView(withId(R.id.editText_name)).perform(ViewActions.typeText("Montreal"));
+        onView(withId(R.id.editText_name)).perform(ViewActions.replaceText("Montreal"));
         onView(withId(R.id.button_confirm)).perform(click());
 
         // Click on the city in the list
@@ -104,7 +104,7 @@ public class MainActivityTest {
     public void testBackButton() {
         // Add a city to the list first
         onView(withId(R.id.button_add)).perform(click());
-        onView(withId(R.id.editText_name)).perform(ViewActions.typeText("Calgary"));
+        onView(withId(R.id.editText_name)).perform(ViewActions.replaceText("Calgary"));
         onView(withId(R.id.button_confirm)).perform(click());
 
         // Click on the city in the list
